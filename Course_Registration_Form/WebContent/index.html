@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Course Registration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * { margin:0; padding:0; box-sizing:border-box; }
+      body { background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif; display:flex; justify-content:center; align-items:center; min-height:100vh; padding:20px; }
+      .registration-form { background:#fff; border-radius:16px; box-shadow:0 10px 40px rgba(0,0,0,0.2); padding:40px 36px; width:100%; max-width:480px; }
+      .registration-form h2 { margin-bottom:8px; color:#1a1a2e; font-weight:700; font-size:28px; text-align:center; }
+      .registration-form p { text-align:center; color:#6b7280; margin-bottom:32px; font-size:14px; }
+      .form-group { position:relative; margin-bottom:24px; }
+      .form-label { display:block; margin-bottom:8px; color:#374151; font-weight:600; font-size:14px; }
+      .form-input, .form-select, .form-textarea { width:100%; padding:14px 16px; border:2px solid #e5e7eb; border-radius:10px; background:#f9fafb; font-size:15px; color:#1f2937; outline:none; transition:all .3s ease; }
+      .form-input:focus, .form-select:focus, .form-textarea:focus { border-color:#667eea; background:#fff; box-shadow:0 0 0 4px rgba(102,126,234,0.1); }
+      .form-select { cursor:pointer; appearance:none; padding-right:44px; background-position:right 16px center; background-repeat:no-repeat; }
+      .form-textarea { height:90px; resize:none; }
+      .submit-btn { background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); color:#fff; border:none; border-radius:10px; padding:16px 0; font-size:16px; font-weight:700; width:100%; cursor:pointer; box-shadow:0 4px 15px rgba(102,126,234,0.4); text-transform:uppercase; letter-spacing:1px; }
+    </style>
+  </head>
+  <body>
+    <form action="register" method="post" class="registration-form" autocomplete="off">
+      <h2>Course Registration</h2>
+      <p>Fill in the details below to register for your course</p>
+
+      <div class="form-group">
+        <label class="form-label" for="name">Full Name *</label>
+        <input type="text" required class="form-input" id="name" name="name" placeholder="Enter your full name" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Email Address *</label>
+        <input type="email" required class="form-input" id="email" name="email" placeholder="yourname@example.com" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="contact">Contact Number *</label>
+        <input type="tel" required class="form-input" id="contact" name="contact" pattern="[0-9]{10,15}" placeholder="Enter 10-digit mobile number" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="course">Select Course *</label>
+        <select class="form-select" id="course" name="course" required>
+          <option value="" disabled selected>Choose your course</option>
+          <option value="java">Java Programming Fundamentals</option>
+          <option value="webdev">Full Stack Web Development</option>
+          <option value="database">SQL & Database Management</option>
+          <option value="python">Python for Beginners</option>
+          <option value="react">React.js Masterclass</option>
+          <option value="cloud">Cloud Computing (AWS/Azure)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="comments">Additional Comments</label>
+        <textarea class="form-textarea" id="comments" name="comments" placeholder="Any specific requirements or questions..."></textarea>
+      </div>
+
+      <div class="form-action">
+        <button class="submit-btn" type="submit">Register Now</button>
+      </div>
+    </form>
+  </body>
+</html>
